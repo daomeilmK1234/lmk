@@ -1,6 +1,6 @@
 <template>
   <div class="layout_container">
-    <div class="layout_silder">
+    <div class="layout_silder" :class="{ fold: collapse.isCollapse }">
       <Logo></Logo>
       <el-scrollbar class="scrollbar">
         <!-- 菜单组件 -->
@@ -14,9 +14,15 @@
           <Menu></Menu>
         </el-menu>
       </el-scrollbar>
-      <div class="layout_tabbar">
+      <div class="layout_tabbar" :class="{ fold: collapse.isCollapse }">
         <!-- 顶部tabbar -->
+
+        <tabbar />
       </div>
+    </div>
+    <div class="layout_main">
+      <!-- 主体内容 -->
+      <router-view></router-view>
     </div>
   </div>
 </template>
@@ -25,6 +31,8 @@
 import Logo from './logo/index.vue'
 import Menu from './menu/index.vue'
 import Tabbar from './tabbar/index.vue'
+import { useCollapse } from '@/stores/setting'
+const collapse = useCollapse()
 </script>
 
 <style lang="scss" scoped>

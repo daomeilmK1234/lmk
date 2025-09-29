@@ -22,4 +22,16 @@ export const constantRoute = [
       },
     ],
   },
+  {
+    path: '/system',
+    name: 'System',
+    component: () => import('@/views/system/index.vue'),
+    children: [
+      {
+        path: '/system/user',
+        name: 'User',
+        component: () => import('@/views/home/HomeIndex.vue'),
+      },
+    ],
+  },
 ]

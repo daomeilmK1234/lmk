@@ -13,7 +13,7 @@
               placeholder="请输入用户名"
             ></el-input>
           </el-form-item>
-          <el-form-item prop="username">
+          <el-form-item prop="password">
             <el-input
               :prefix-icon="Lock"
               v-model="loginForm.password"
@@ -43,24 +43,25 @@ import { reactive, ref } from 'vue'
 import { User, Lock } from '@element-plus/icons-vue'
 import axios from 'axios'
 import router from '@/router'
-
-const loginApi = axios({
-  url: '/api/user/login',
-  method: 'post',
-  data: { username: 'admin', password: '111111' },
-})
 const loginForms = ref()
 const loginForm = reactive({ username: 'admin', password: '111111' })
+
 const loading = ref(false)
 const login = async () => {
-  const res = await loginApi
-  console.log(res.status)
+  const loginApi = axios({
+    url: '/api/user/login',
+    method: 'post',
+    data: loginForm,
+  })
 
-  if (res.status === 200) {
+  const res = await loginApi
+  console.log(res)
+
+  if (res.data.code === 200) {
     loading.value = true
     router.push('/')
   } else {
-    console.log('登录失败')
+    alert('登录失败')
   }
 }
 
