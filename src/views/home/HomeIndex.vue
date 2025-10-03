@@ -1,8 +1,8 @@
 <template>
   <router-view></router-view>
-  <div>
+  <div class="home_index">
     <el-card>
-      <div class="box">
+      <div class="content">
         <div class="bottom">
           <h3 class="title">{{ getTime() }}好呀</h3>
           <p class="subtitle">哑舍运营平台</p>
@@ -16,4 +16,12 @@
 import { getTime } from '@/uilts/time'
 </script>
 
-<style lang="scss" scoped></style>
+<style lang="scss" scoped>
+body {
+  display: flex;
+}
+.content {
+  flex: 1;
+  width: 100%;
+}
+</style>

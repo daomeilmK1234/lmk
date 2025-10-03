@@ -2,11 +2,9 @@
 <template>
   <el-breadcrumb separator=">">
     <el-breadcrumb-item :to="{ path: '/' }">主页</el-breadcrumb-item>
-    <el-breadcrumb-item>
-      <a href="/">promotion</a>
-    </el-breadcrumb-item>
-    <el-breadcrumb-item> list</el-breadcrumb-item>
-    <el-breadcrumb-item> detail</el-breadcrumb-item>
+    <el-breadcrumb-item> 数据大屏 </el-breadcrumb-item>
+    <el-breadcrumb-item> 会员管理</el-breadcrumb-item>
+    <el-breadcrumb-item> 商品管理</el-breadcrumb-item>
   </el-breadcrumb>
 </template>
 

@@ -1,6 +1,6 @@
 <!-- eslint-disable vue/multi-word-component-names -->
 <template>
-  <router-view></router-view>
+  <div>user页</div>
 </template>
 
 <script setup lang="ts"></script>

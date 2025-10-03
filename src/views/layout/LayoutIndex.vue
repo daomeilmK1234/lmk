@@ -11,7 +11,7 @@
           active-text-color="yellowgreen"
         >
           <!-- 根据路由动态生成菜单 -->
-          <Menu></Menu>
+          <Menu :menuList="userStore.menuRoutes" />
         </el-menu>
       </el-scrollbar>
       <div class="layout_tabbar" :class="{ fold: collapse.isCollapse }">
@@ -20,7 +20,7 @@
         <tabbar />
       </div>
     </div>
-    <div class="layout_main">
+    <div class="layout_main" :class="{ fold: collapse.isCollapse }">
       <!-- 主体内容 -->
       <router-view></router-view>
     </div>
@@ -32,6 +32,8 @@ import Logo from './logo/index.vue'
 import Menu from './menu/index.vue'
 import Tabbar from './tabbar/index.vue'
 import { useCollapse } from '@/stores/setting'
+import { useUserStore } from '@/stores/user'
+const userStore = useUserStore()
 const collapse = useCollapse()
 </script>
 

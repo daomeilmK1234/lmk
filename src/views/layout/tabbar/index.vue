@@ -9,6 +9,17 @@
     <div class="tabbar_right">
       <el-button size="small" icon="Refresh" circle @click="updateRefsh"></el-button>
       <el-button size="small" icon="FullScreen" circle @click="fullScreen"></el-button>
+      <el-popover placement="bottom" title="主题设置" :width="300" trigger="hover">
+        <!-- 表单元素 -->
+        <template #reference>
+          <el-button size="small" icon="Setting" circle></el-button>
+        </template>
+      </el-popover>
+      <img
+        src="@/assets/images/avatar.jpg"
+        style="width: 24px; height: 24px; margin: 0px 10px; border-radius: 50%"
+      />
+      <!-- 下拉菜单 -->
     </div>
     <div class="tabbar_under">
       <breadcrumb></breadcrumb>
@@ -26,7 +37,8 @@ const changeIcon = () => {
 
 //刷新按钮点击回调
 const updateRefsh = () => {
-  LayOutSettingStore.refresh = !LayOutSettingStore.refresh
+  // 刷新当前页面
+  location.reload()
 }
 
 const fullScreen = () => {
@@ -64,6 +76,7 @@ const fullScreen = () => {
   .tabbar_under {
     position: absolute;
     top: 50px;
+    left: 25px;
   }
 }
 </style>
