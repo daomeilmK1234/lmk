@@ -11,40 +11,39 @@ export const constantRoute = [
   },
   {
     path: '/',
-    name: 'Layout',
     component: () => import('@/views/layout/LayoutIndex.vue'),
     redirect: '/home',
     children: [
       {
         path: '/home',
-        name: 'Home',
+        name: '主页',
         component: () => import('@/views/home/HomeIndex.vue'),
       },
       {
         path: '/system',
-        name: 'System',
+        name: '系统',
         component: () => import('@/views/system/index.vue'),
         children: [
           {
             path: '/system/user',
-            name: 'User',
+            name: '用户',
             component: () => import('@/views/system/user/index.vue'),
           },
           {
             path: '/system/role',
-            name: 'Role',
+            name: '权限',
             component: () => import('@/views/system/role/index.vue'),
           },
         ],
       },
       {
         path: '/member',
-        name: 'Member',
+        name: '会员',
         component: () => import('@/views/member/index.vue'),
       },
       {
         path: '/product',
-        name: 'Product',
+        name: '产品',
         component: () => import('@/views/product/index.vue'),
       },
     ],

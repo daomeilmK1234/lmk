@@ -22,7 +22,7 @@
       <!-- 下拉菜单 -->
     </div>
     <div class="tabbar_under">
-      <breadcrumb></breadcrumb>
+      <breadcrumb />
     </div>
   </div>
 </template>
@@ -75,8 +75,8 @@ const fullScreen = () => {
   }
   .tabbar_under {
     position: absolute;
-    top: 50px;
-    left: 25px;
+    top: 15px;
+    left: 55px;
   }
 }
 </style>

@@ -16,7 +16,6 @@
       </el-scrollbar>
       <div class="layout_tabbar" :class="{ fold: collapse.isCollapse }">
         <!-- 顶部tabbar -->
-
         <tabbar />
       </div>
     </div>
